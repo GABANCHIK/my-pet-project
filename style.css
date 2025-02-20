@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Barlow", sans-serif;
 }
 
 html,
@@ -15,7 +16,6 @@ body {
 .nav {
     font-size: 1.3rem;
     font-weight: 600;
-    font-family: "Barlow", sans-serif;
     display: flex;
     width: 100%;
     align-items: center;
@@ -29,23 +29,18 @@ body {
     z-index: 1000;
 }
 
-.middle {
-    display: flex;
-}
-
 .item {
     text-decoration: none;
     margin: 0px 30px;
     color: white;
     position: relative;
-    padding-bottom: 5px;
 }
 
 .item::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -5px;
     width: 100%;
     height: 2px;
     background-color: transparent;
@@ -55,16 +50,19 @@ body {
     background-color: white;
 }
 
+
 .right {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    justify-content: center;
 }
 
 .right button {
+    text-align: center;
+    width: auto; 
     background-color: #202020;
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 1.3rem;  
     color: white;
     border: 3px white solid;
     border-radius: 8px;
@@ -94,7 +92,6 @@ body {
     background-position-x: 32%;
     width: 100%;
     height: 95vh;
-    font-family: "Barlow", sans-serif;
     display: block;
 }
 
