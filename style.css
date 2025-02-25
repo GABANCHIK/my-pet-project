@@ -29,14 +29,14 @@ body {
     z-index: 1000;
 }
 
-.item {
+.nav-item {
     text-decoration: none;
     margin: 0px 30px;
     color: white;
     position: relative;
 }
 
-.item::after {
+.nav-item::after {
     content: "";
     position: absolute;
     left: 0;
@@ -46,7 +46,7 @@ body {
     background-color: transparent;
 }
 
-.item:hover::after {
+.nav-item:hover::after {
     background-color: white;
 }
 
