@@ -16,22 +16,52 @@
     <body>
         <nav class="nav">
             <div>VOLARBEBE PIZZA</div>
-
             <div class="middle">
-                <a href="#" class="nav-item">HOME</a>
-                <a href="#" class="nav-item">ABOUT</a>
-                <a href="#" class="nav-item">PRODUCT</a>
-                <a href="#" class="nav-item">LOCATION</a>
+                <a href="#" class="hideOnMobile nav-item">HOME</a>
+                <a href="#" class="hideOnMobile nav-item">ABOUT</a>
+                <a href="#" class="hideOnMobile nav-item">PRODUCT</a>
+                <a href="#" class="hideOnMobile nav-item">LOCATION</a>
             </div>
 
             <div class="right">
-                <a  href="#" class="nav-item">CONTACT</a>
+                <div class="right-sidebar">
+                    <a onclick="hideSideBar()" href="#">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24px"
+                            viewBox="0 -960 960 960"
+                            width="24px"
+                            fill="#e3e3e3"
+                        >
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                            />
+                        </svg>
+                    </a>
+                    <a href="#" class="sidebar-item">HOME</a>
+                    <a href="#" class="sidebar-item">ABOUT</a>
+                    <a href="#" class="sidebar-item">PRODUCT</a>
+                    <a href="#" class="nav-item">LOCATION</a>
+                </div>
+                <a href="#" class="nav-item">CONTACT</a>
                 <button>SIGN IN</button>
+                <a class="right-menu-button" onclick="showSideBar()" href="#">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#e3e3e3"
+                    >
+                        <path
+                            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                        />
+                    </svg>
+                </a>
             </div>
         </nav>
 
         <main class="main">
-
             <div class="first-section-wrapper">
                 <div class="main-text-container">
                     <h1 class="main-pizza-text">
@@ -115,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="footer">
                     <div class="footer-logo-item">VOLARBEBE PIZZA</div>
                     <div class="footer-item">
@@ -154,5 +184,16 @@
                 </div>
             </div>
         </main>
+        <script>
+            function showSideBar() {
+                const sidebar = document.querySelector(".right-sidebar");
+                sidebar.style.display = "flex";
+            }
+
+            function hideSideBar() {
+                const sidebar = document.querySelector(".right-sidebar");
+                sidebar.style.display = "none";
+            }
+        </script>
     </body>
 </html>

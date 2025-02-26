@@ -64,7 +64,27 @@ body {
 
     .right {
         @include flex-center;
-
+        &-sidebar {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba($main-bg-color, 0.8);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        & .sidebar-item {
+            text-decoration: none;
+            color: white;
+            width: 100%;
+        }
+        &-menu-button {
+            display: none;
+        }
         & button {
             width: auto;
             padding: 5px;
@@ -250,3 +270,38 @@ body {
         font-size: 2.5rem;
     }
 }
+
+@media (max-width: 1060px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    nav .right .right-menu-button{
+        display: flex;
+        margin-left: 30px;
+        cursor: pointer;
+    }
+
+    .new-products {
+        &-info-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+
+//TODO: side bar design
+
+//FOR TABLET
+//Responsive main section
+//Responsive second section
+//Responsive footer
+
+//FOR MOBILE
+//Responsive all sections
