@@ -24,7 +24,7 @@
             </div>
 
             <div class="right">
-                <div class="right-sidebar">
+                <!-- <div class="right-sidebar">
                     <a class="sidebar-item" onclick="hideSideBar()" href="#">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +42,14 @@
                     <a href="#" class="sidebar-item">ABOUT</a>
                     <a href="#" class="sidebar-item">PRODUCT</a>
                     <a href="#" class="sidebar-item">LOCATION</a>
-                </div>
+                </div> -->
                 <a href="#" class="nav-item">CONTACT</a>
                 <button>SIGN IN</button>
-                <a class="right-menu-button" onclick="showSideBar()" href="#">
+                <a
+                    class="right-menu-open hideOnDesktop"
+                    onclick="toggleSidebar()"
+                    href="#"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="48px"
@@ -58,10 +62,33 @@
                         />
                     </svg>
                 </a>
+                <a
+                    class="right-menu-close hideOnDesktop"
+                    onclick="toggleSidebar()"
+                    href="#"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#e3e3e3"
+                    >
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                        />
+                    </svg>
+                </a>
             </div>
         </nav>
 
         <main class="main">
+            <div class="right-sidebar">
+                <a href="#" class="sidebar-item">HOME</a>
+                <a href="#" class="sidebar-item">ABOUT</a>
+                <a href="#" class="sidebar-item">PRODUCT</a>
+                <a href="#" class="sidebar-item">LOCATION</a>
+            </div>
             <div class="first-section-wrapper">
                 <div class="main-text-container">
                     <h1 class="main-pizza-text">
@@ -185,14 +212,15 @@
             </div>
         </main>
         <script>
-            function showSideBar() {
+            function toggleSidebar() {
                 const sidebar = document.querySelector(".right-sidebar");
-                sidebar.style.display = "flex";
-            }
+                const sidebarIcon = document.querySelector(".right-menu-open");
+                const sidebarIconClose =
+                    document.querySelector(".right-menu-close");
 
-            function hideSideBar() {
-                const sidebar = document.querySelector(".right-sidebar");
-                sidebar.style.display = "none";
+                sidebar.classList.toggle("active");
+                sidebarIcon.classList.toggle("active");
+                sidebarIconClose.classList.toggle("active");
             }
         </script>
     </body>

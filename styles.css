@@ -29,7 +29,7 @@ body {
 }
 .nav-item {
   position: relative;
-  margin: 0px 30px;
+  margin: 0px 25px;
   text-decoration: none;
   color: white;
 }
@@ -45,57 +45,52 @@ body {
 .nav-item:hover::after {
   background-color: white;
 }
-.nav .right {
+
+.right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.nav .right-sidebar {
-  display: flex;
+.right-sidebar {
+  display: none;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+  overflow-y: auto;
   width: 250px;
   z-index: 999;
-  background-color: rgba(32, 32, 32, 0.8);
+  background-color: #202020;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
 }
-.nav .right-sidebar a {
+.right-sidebar.active {
+  display: flex;
+}
+.right-sidebar .sidebar-item {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
-}
-.nav .right-sidebar a:hover {
-  font-size: 2.1rem;
-  background-color: rgb(211, 207, 207);
-}
-.nav .right .sidebar-item {
   text-decoration: none;
   color: white;
   width: 100%;
-  padding: 15px 5px;
+  padding: 15px;
   transition: all 500ms;
   font-size: 2rem;
   border-top: 2px solid white;
 }
-.nav .right .sidebar-item:last-child {
+.right-sidebar .sidebar-item:last-child {
   border-bottom: 2px solid white;
 }
-.nav .right .sidebar-item:first-child {
+.right-sidebar .sidebar-item:first-child {
   border-top: none;
 }
-.nav .right .sidebar-item:hover {
-  color: #000;
+.right-sidebar .sidebar-item:hover {
   font-size: 2.1rem;
   background-color: rgb(211, 207, 207);
+  color: #202020;
 }
-.nav .right-menu-button {
-  display: none;
-}
-.nav .right button {
+.right button {
   width: auto;
   padding: 5px;
   color: white;
@@ -108,9 +103,28 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
-.nav .right button:hover {
+.right button:hover {
   color: rgb(211, 207, 207);
   border-color: rgb(128, 125, 125);
+}
+.right-menu-button {
+  display: none;
+}
+.right-menu-open {
+  display: none;
+  cursor: pointer;
+}
+.right-menu-open.active {
+  display: none;
+  cursor: pointer;
+}
+.right-menu-close {
+  display: none;
+  cursor: pointer;
+}
+.right-menu-close.active {
+  display: block;
+  cursor: pointer;
 }
 
 .first-section-wrapper {
@@ -123,9 +137,10 @@ body {
 }
 
 .main {
+  position: relative;
   display: block;
   width: 100%;
-  height: 95vh;
+  max-height: 95vh;
   background-image: url("./images/pizza-back.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -269,21 +284,45 @@ body {
   font-size: 2.5rem;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1030px) {
   .hideOnMobile {
     display: none;
   }
-  nav .right .right-menu-button {
+  .right-sidebar {
+    position: absolute;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    background-color: #202020;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s ease-in-out;
+  }
+  .right-sidebar.active {
+    right: 0;
+  }
+  .right-menu-open {
     display: flex;
     margin-left: 30px;
-    cursor: pointer;
+  }
+  .right-menu-open.active {
+    display: none;
+  }
+  .right-menu-close {
+    display: none;
+    margin-left: 30px;
   }
   .new-products-info-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 400px) {
-  .sidebar {
-    width: 100%;
+@media (min-width: 1030px) {
+  .right .right-menu-close {
+    display: none;
+  }
+  .right-sidebar.active {
+    display: none;
   }
 }
