@@ -240,6 +240,8 @@ body {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 25px;
+        align-items: center;
+        justify-items: center;
         width: 80%;
         padding: 20px;
         color: $main-text-color;
@@ -363,8 +365,29 @@ body {
     }
 
     .new-products {
+        font-size: 1.5rem;
         &-info-container {
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .main-text-container {
+        margin: 0 50px 75px 0;
+        font-size: 1.5rem;
+    }
+    .footer {
+        &-logo-item {
+            font-size: 1.5rem;
+        }
+        &-item div {
+            font-size: 1.3rem;
+        }
+    }
+    .card {
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.1rem;
         }
     }
 }

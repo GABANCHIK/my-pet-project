@@ -202,6 +202,8 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 25px;
+  align-items: center;
+  justify-items: center;
   width: 80%;
   padding: 20px;
   color: #2b2b2b;
@@ -314,8 +316,27 @@ body {
     display: none;
     margin-left: 30px;
   }
+  .new-products {
+    font-size: 1.5rem;
+  }
   .new-products-info-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .main-text-container {
+    margin: 0 50px 75px 0;
+    font-size: 1.5rem;
+  }
+  .footer-logo-item {
+    font-size: 1.5rem;
+  }
+  .footer-item div {
+    font-size: 1.3rem;
+  }
+  .card h3 {
+    font-size: 1.5rem;
+  }
+  .card p {
+    font-size: 1.1rem;
   }
 }
 @media (min-width: 1030px) {
