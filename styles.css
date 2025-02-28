@@ -15,15 +15,15 @@ body {
 .nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 1000;
-  justify-content: space-between;
   width: 100%;
   height: 75px;
   padding: 20px 50px;
   background-color: #202020;
-  color: white;
+  color: #fff;
   font-size: 1.3rem;
   font-weight: 600;
 }
@@ -31,7 +31,7 @@ body {
   position: relative;
   margin: 0px 25px;
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 .nav-item::after {
   position: absolute;
@@ -43,7 +43,7 @@ body {
   content: "";
 }
 .nav-item:hover::after {
-  background-color: white;
+  background-color: #fff;
 }
 
 .right {
@@ -62,23 +62,20 @@ body {
   z-index: 999;
   background-color: #202020;
 }
-.right-sidebar.active {
-  display: flex;
-}
 .right-sidebar .sidebar-item {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
   text-decoration: none;
-  color: white;
+  color: #fff;
   width: 100%;
   padding: 15px;
   transition: all 500ms;
   font-size: 2rem;
-  border-top: 2px solid white;
+  border-top: 2px solid #fff;
 }
 .right-sidebar .sidebar-item:last-child {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #fff;
 }
 .right-sidebar .sidebar-item:first-child {
   border-top: none;
@@ -91,9 +88,9 @@ body {
 .right button {
   width: auto;
   padding: 5px;
-  color: white;
+  color: #fff;
   background-color: #202020;
-  border: 3px white solid;
+  border: 3px #fff solid;
   border-radius: 8px;
   transition: 400ms;
   text-align: center;
@@ -128,7 +125,6 @@ body {
 .first-section-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: end;
   height: 100vh;
   width: 100%;
@@ -146,8 +142,9 @@ body {
 }
 .main-text-container {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
   margin: 0px 250px;
   color: #2b2b2b;
   font-size: 2rem;
@@ -173,7 +170,7 @@ body {
 }
 .main-order-button:hover {
   background-color: #2b2b2b;
-  color: white;
+  color: #fff;
 }
 
 .secound-section-wrapper {
@@ -181,7 +178,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  color: white;
+  color: #fff;
 }
 
 .new-products-container {
@@ -213,7 +210,6 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: white;
   background-color: #f8f8f8;
   font-size: 1.5rem;
   font-weight: bold;
@@ -255,7 +251,7 @@ body {
 }
 .card-content a:hover {
   background-color: #2b2b2b;
-  color: white;
+  color: #fff;
 }
 
 .footer {
@@ -267,7 +263,7 @@ body {
 .footer > div {
   border-right: 2px #f8f8f8 solid;
 }
-.footer div:last-child {
+.footer > div:last-child {
   border: none;
 }
 .footer-item {
@@ -281,11 +277,11 @@ body {
   font-weight: 400;
   display: flex;
   align-items: center;
-  justify-self: center;
+  justify-content: center;
 }
 .footer-item div a {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 .footer-item div a:hover {
   color: rgb(211, 207, 207);
@@ -311,16 +307,18 @@ body {
     display: none;
   }
   .right-sidebar {
+    display: flex;
     position: absolute;
     top: 0;
     right: -250px;
     width: 250px;
     background-color: #202020;
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    display: flex;
     flex-direction: column;
     transition: right 0.4s ease-in-out;
+  }
+  .right-sidebar .showOnMobile {
+    display: none;
   }
   .right-sidebar.active {
     right: 0;
@@ -328,9 +326,6 @@ body {
   .right-menu-open {
     display: flex;
     margin-left: 30px;
-  }
-  .right-menu-open.active {
-    display: none;
   }
   .right-menu-close {
     display: none;
