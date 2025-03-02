@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./styles.css" />
         <link rel="icon" href="./images/pizza-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,18 +15,59 @@
     </head>
     <body>
         <nav class="nav">
-            <div class="logo-container">VOLARBEBE PIZZA</div>
-
+            <div>VOLARBEBE PIZZA</div>
             <div class="middle">
-                <a href="#" class="nav-item">HOME</a>
-                <a href="#" class="nav-item">ABOUT</a>
-                <a href="#" class="nav-item">PRODUCT</a>
-                <a href="#" class="nav-item">LOCATION</a>
+                <a href="#" class="hideOnMobile nav-item">HOME</a>
+                <a href="#" class="hideOnMobile nav-item">ABOUT</a>
+                <a href="#" class="hideOnMobile nav-item">PRODUCT</a>
+                <a href="#" class="hideOnMobile nav-item">LOCATION</a>
             </div>
 
             <div class="right">
-                <a  href="#" class="nav-item">CONTACT</a>
-                <button>SIGN IN</button>
+                <a href="#" class="nav-item showOnMobile">CONTACT</a>
+                <button class="showOnMobile">SIGN IN</button>
+                <a
+                    class="right-menu-open hideOnDesktop"
+                    onclick="toggleSidebar()"
+                    href="#"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#e3e3e3"
+                    >
+                        <path
+                            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                        />
+                    </svg>
+                </a>
+                <a
+                    class="right-menu-close hideOnDesktop"
+                    onclick="toggleSidebar()"
+                    href="#"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#e3e3e3"
+                    >
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                        />
+                    </svg>
+                </a>
+            </div>
+            <div class="right-sidebar">
+                <a href="#" class="sidebar-item">HOME</a>
+                <a href="#" class="sidebar-item">ABOUT</a>
+                <a href="#" class="sidebar-item">PRODUCT</a>
+                <a href="#" class="sidebar-item">LOCATION</a>
+                <a href="#" class="sidebar-item showOnMobile">CONTACT</a>
+                <a href="#" class="sidebar-item showOnMobile">SIGN IN</a>
             </div>
         </nav>
 
@@ -47,7 +88,7 @@
                 <div class="new-products-container">
                     <h2 class="new-products-text">Our newest products</h2>
                     <div class="new-products-info-container">
-                        <div class="box">
+                        <div class="card">
                             <img src="./images/pizza-diablo.jpg" />
                             <div class="card-content">
                                 <h3>Pizza Diablo</h3>
@@ -58,7 +99,7 @@
                                 <a href="#">Read More</a>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="card">
                             <img src="./images/pizza-gavajskaya.jpg" />
                             <div class="card-content">
                                 <h3>Pizza Hawaii</h3>
@@ -69,7 +110,7 @@
                                 <a href="#">Read More</a>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="card">
                             <img src="./images/pizzza-4-cheese.jpg" />
                             <div class="card-content">
                                 <h3>Pizza 4 cheeses</h3>
@@ -80,29 +121,29 @@
                                 <a href="#">Read More</a>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="card">
                             <img src="./images/pizza-potuzhna.jpg" />
                             <div class="card-content">
                                 <h3>Pizza Potuzhna</h3>
                                 <p>
-                                    A powerful mix of four types of hearty meat
-                                    and a touch of greenery.
+                                    A powerful mix of four types of meat and a
+                                    touch of greenery.
                                 </p>
                                 <a href="#">Read More</a>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="card">
                             <img src="./images/pizza-pepperoni.jpg" />
                             <div class="card-content">
                                 <h3>Pizza Pepperoni</h3>
                                 <p>
                                     A classic favorite with crispy pepperoni
-                                    slices and melted cheese on a golden crust.
+                                    slices and melted cheese.
                                 </p>
                                 <a href="#">Read More</a>
                             </div>
                         </div>
-                        <div class="box">
+                        <div class="card">
                             <img src="./images/pizza-mushroom.jpg" />
                             <div class="card-content">
                                 <h3>Mushroom Pizza</h3>
@@ -115,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="footer">
                     <div class="footer-logo-item">VOLARBEBE PIZZA</div>
                     <div class="footer-item">
@@ -154,5 +195,17 @@
                 </div>
             </div>
         </main>
+        <script>
+            function toggleSidebar() {
+                const sidebar = document.querySelector(".right-sidebar");
+                const sidebarIcon = document.querySelector(".right-menu-open");
+                const sidebarIconClose =
+                    document.querySelector(".right-menu-close");
+
+                sidebar.classList.toggle("active");
+                sidebarIcon.classList.toggle("active");
+                sidebarIconClose.classList.toggle("active");
+            }
+        </script>
     </body>
 </html>
