@@ -1,0 +1,79 @@
+.form {
+    padding-top: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.form-control {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.form-control label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 5px 0px;
+    align-self: flex-start;
+}
+
+.form-control input {
+    width: 30%;
+    font-size: 1rem;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid black;
+}
+.form-control input:focus-visible {
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-color: black;
+}
+
+.invalid input {
+    background-color: rgb(226, 157, 157);
+    border-color: red;
+}
+
+.error-text {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.cart-close-btn {
+    height: 50px;
+    border: 2px solid #202020;
+    background-color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0px 35px;
+}
+.cart-send-btn {
+    height: 50px;
+    background-color: #202020;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0px 35px;
+}
+.cart-send-btn:hover {
+    background-color: rgb(71, 70, 70);
+}
+
+.cart-close-btn:hover {
+    background-color: #d5d5d5;
+}
+
+.cart-send-btn:disabled {
+    color: #202020;
+    background-color: #868585;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
