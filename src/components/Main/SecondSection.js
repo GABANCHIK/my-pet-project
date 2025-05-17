@@ -1,4 +1,4 @@
-import styles from "./SecondSection.module.css";
+import styles from "./SecondSection.module.scss";
 import PIZZA_INFO from "../../constants/pizza-info";
 import PizzaItem from "./PizzaItem";
 

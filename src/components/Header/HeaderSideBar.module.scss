@@ -1,0 +1,69 @@
+@use "../../constants/variables" as *;
+.right-sidebar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    z-index: 999;
+    background-color: $COLOR-BACKGROUND;
+    overflow-y: auto;
+    & .sidebar-item {
+        @include flex-align();
+        flex-direction: row-reverse;
+        width: 100%;
+        padding: 15px;
+        text-decoration: none;
+        color: $COLOR-WHITE;
+        font-size: 2rem;
+        border-top: 2px solid $COLOR-WHITE;
+        transition: background-color 0.3s, font-size 0.3s;
+        &:last-child {
+            border-bottom: 2px solid $COLOR-WHITE;
+        }
+        &:first-child {
+            border-top: none;
+        }
+        &:hover {
+            font-size: 2.1rem;
+            background-color: rgb(211, 207, 207);
+            color: $COLOR-BACKGROUND;
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .right-sidebar {
+        display: flex;
+        top: 75px;
+        right: -250px;
+        width: 250px;
+        background-color: $COLOR-BACKGROUND;
+        flex-direction: column;
+        transition: right 0.4s ease-in-out;
+        .showOnMobile {
+            display: none;
+        }
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .right-sidebar .showOnMobile {
+        display: none;
+    }
+}
+@media (max-width: 450px) {
+    .right-sidebar .showOnMobile {
+        display: flex;
+    }
+}
+
+@media (min-width: 400px) {
+    .right-sidebar .sidebar-item:last-child {
+        display: none;
+    }
+}

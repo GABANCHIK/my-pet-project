@@ -1,0 +1,55 @@
+@use "../../constants/variables" as *;
+.cart-item {
+    @include flex-align();
+    flex-direction: column;
+    margin: 5px;
+    padding-bottom: 5px;
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    &-buttons {
+        @include flex-align(null, flex-end);
+        gap: 5px;
+        button {
+            @include flex-align(center, center);
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border: 2px solid $COLOR-BACKGROUND;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: $COLOR-WHITE;
+            &:hover {
+                background-color: $COLOR-GRAY-LIGHT;
+            }
+        }
+    }
+    &-content {
+        @include flex-align(center, space-between);
+        span:last-child {
+            @include flex-align(center, center);
+            border: 1px solid $COLOR-GRAY-LIGHT;
+            border-radius: 5px;
+            padding: 10px;
+            margin-left: 50px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            width: 50px;
+        }
+    }
+    &-price {
+        font-size: 1.5rem;
+        font-weight: 600;
+        &-container {
+            @include flex-align(center);
+            width: 50%;
+        }
+    }
+}
+
+li {
+    border-bottom: 1px solid $COLOR-GRAY-LIGHT;
+}

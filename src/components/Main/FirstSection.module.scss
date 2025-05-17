@@ -1,0 +1,60 @@
+@use "../../constants/variables" as *;
+
+.first-section-wrapper {
+    @include flex-align(center, flex-end);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.main {
+    &-text-container {
+        @include flex-align(flex-start, flex-start);
+        flex-direction: column;
+        margin: 0px 250px;
+        color: $COLOR-TEXT;
+        font-size: 2rem;
+        position: absolute;
+    }
+    &-pizza-text {
+        @include flex-align();
+        flex-direction: column;
+        font-weight: 600;
+    }
+    &-small-pizza-text {
+        margin-top: 10px;
+        font-weight: 300;
+    }
+    &-order-button {
+        padding: 10px 15px;
+        margin: 15px 0px;
+        text-decoration: none;
+        border: 2px solid $COLOR-TEXT;
+        color: $COLOR-TEXT;
+        font-weight: 400;
+        font-size: 1.1em;
+        transition: 500ms;
+        &:hover {
+            background-color: $COLOR-TEXT;
+            color: $COLOR-WHITE;
+        }
+    }
+}
+
+
+@media (max-width: 1060px) {
+    .main-text-container {
+        margin: 0 50px 75px 0;
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 760px) {
+    .main-text-container {
+        margin: 0 50px 75px 0;
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 450px) {
+    .main-text-container {
+        margin: 0 50px 75px 50px;
+    }
+}

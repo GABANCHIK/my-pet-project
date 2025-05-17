@@ -1,4 +1,4 @@
-import styles from "./CartIcon.module.css";
+import styles from "./CartIcon.module.scss";
 
 const CartIcon = () => {
     return (

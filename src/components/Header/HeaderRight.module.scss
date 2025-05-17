@@ -1,0 +1,97 @@
+@use "../../constants/variables" as *;
+.right {
+    @include flex-align(center, center);
+}
+.nav-item {
+    position: relative;
+    margin: 0px 25px;
+    text-decoration: none;
+    color: $COLOR-WHITE;
+    &::after {
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        height: 2px;
+        width: 100%;
+        background-color: transparent;
+        content: "";
+    }
+    &:hover::after {
+        background-color: #fff;
+    }
+}
+
+.burger-toggle-button {
+    display: none;
+    margin-left: 30px;
+}
+
+.cart-nav-btn {
+    @include flex-align(center, space-around);
+    width: 200px;
+    display: flex;
+    color: $COLOR-WHITE;
+    background-color: $COLOR-BACKGROUND;
+    border: 3px solid $COLOR-WHITE;
+    padding: 10px 20px;
+    border-radius: 10px;
+    &:hover {
+        background-color: rgb(53, 53, 53);
+    }
+    span {
+        font-size: 21px;
+        font-weight: 600;
+        &:last-child {
+            width: 45px;
+            height: 25px;
+            font-size: 1.2rem;
+            text-align: center;
+            background-color: $COLOR-WHITE;
+            color: $COLOR-BACKGROUND;
+            margin-right: 5px;
+            border-radius: 16px;
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .burger-toggle-button {
+        @include flex-align(center, center);
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 760px) {
+    .cart-nav-btn {
+        margin: 0px 0px 0px 25px;
+        width: 170px;
+        span {
+            padding: 0px 5px;
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .cart-nav-btn {
+        width: auto;
+        & > span:first-of-type {
+            display: none;
+        }
+        span {
+            margin-left: 10px;
+            width: 30px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .showOnMobile {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .cart-nav-btn {
+        display: none;
+    }
+}

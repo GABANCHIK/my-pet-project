@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./CartItem.module.css";
+import styles from "./CartItem.module.scss";
 import { cartActions } from "../../store/cart-slice";
 
 const CartItem = (props) => {
@@ -19,14 +19,14 @@ const CartItem = (props) => {
         <li>
             <div className={styles["cart-item"]}>
                 <h2>{title} pizza</h2>
-                <div className={styles.content}>
-                    <div className={styles["price-container"]}>
-                        <span className={styles.price}>
+                <div className={styles["cart-item-content"]}>
+                    <div className={styles["cart-item-price-container"]}>
+                        <span className={styles["cart-item-price"]}>
                             ${price.toFixed(2)}
                         </span>
                         <span>{`x${quantity}`}</span>
                     </div>
-                    <div className={styles.buttons}>
+                    <div className={styles["cart-item-buttons"]}>
                         <button onClick={removeItemHandler}>-</button>
                         <button onClick={addItemHandler}>+</button>
                     </div>

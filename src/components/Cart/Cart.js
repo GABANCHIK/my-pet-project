@@ -1,10 +1,11 @@
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
-import styles from "./Cart.module.css";
+import styles from "./Cart.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { mainActions } from "../../store/main-slice";
 import { cartActions } from "../../store/cart-slice";
 import CartForm from "./CartForm";
+import { useEffect } from "react";
 
 const Cart = (props) => {
     const cartItems = useSelector((state) => state.cart.items);
@@ -16,7 +17,7 @@ const Cart = (props) => {
     const isOrderSendedSuccessfully = useSelector(
         (state) => state.cart.isOrderSendedSuccessfully
     );
-
+    const isCartVisible = useSelector((state) => state.main.isCartVisible);
     const dispatchAction = useDispatch();
     const cartVisibiltyToggle = () => {
         dispatchAction(mainActions.toggleCartVisibility());
@@ -54,7 +55,7 @@ const Cart = (props) => {
     const cartContentSuccessfull = (
         <div className={styles["cart-request-success"]}>
             <p>Order was sended successfully!!!</p>
-            <div className={styles["sended-action"]}>
+            <div className={styles["cart-sent-action"]}>
                 <button
                     className={styles["cart-close-btn"]}
                     onClick={cartVisibiltyToggle}
@@ -64,6 +65,19 @@ const Cart = (props) => {
             </div>
         </div>
     );
+    useEffect(() => {
+        const originalStyle = window.getComputedStyle(
+            document.documentElement
+        ).overflow;
+        if (isCartVisible) {
+            document.documentElement.style.overflow = "hidden";
+        } else {
+            document.documentElement.style.overflow = originalStyle;
+        }
+        return () => {
+            document.documentElement.style.overflow = originalStyle;
+        };
+    }, [isCartVisible]);
 
     return (
         <Modal onVisibilityToggle={props.onVisibilityToggle}>

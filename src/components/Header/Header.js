@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { headerActions } from "../../store/header-slice";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 import HeaderMiddle from "./HeaderMiddle";
 import HeaderRight from "./HeaderRight";
 import HeaderSideBar from "./HeaderSideBar";

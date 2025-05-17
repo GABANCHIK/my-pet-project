@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import styles from "./HeaderSideBar.module.css";
+import styles from "./HeaderSideBar.module.scss";
 
 const HeaderSideBar = (props) => {
     const isRightSideBarOpen = useSelector(

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import styles from "./FirstSection.module.css";
+import styles from "./FirstSection.module.scss";
 import { headerActions } from "../../store/header-slice";
 
 

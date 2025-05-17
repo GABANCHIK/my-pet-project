@@ -1,0 +1,44 @@
+@use "../../constants/variables" as *;
+.cart {
+    margin: 10px;
+    &-list {
+        list-style: none;
+        margin: 20px 0px;
+        max-height: 350px;
+        overflow: auto;
+    }
+    &-total-amount {
+        @include flex-align(null, space-between);
+        span {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+    &-form-buttons {
+        @include flex-align(null, flex-end);
+        margin-top: 20px;
+        gap: 20px;
+    }
+    &-close-btn {
+        @include reject-btn;
+        &:hover {
+            background-color: #d5d5d5;
+        }
+    }
+    &-order-btn {
+        @include accept-btn;
+        &:hover {
+            background-color: rgb(71, 70, 70);
+        }
+        &:disabled {
+            color: $COLOR-BACKGROUND;
+            background-color: #868585;
+        }
+    }
+    &-sent-action {
+        @include flex-align(null, flex-end);
+    }
+    &-request-success {
+        font-size: 1.5rem;
+    }
+}

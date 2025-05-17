@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import CartIcon from "../UI/CartIcon";
-import styles from "./HeaderRight.module.css";
+import styles from "./HeaderRight.module.scss";
 import { mainActions } from "../../store/main-slice";
 import { cartActions } from "../../store/cart-slice";
 

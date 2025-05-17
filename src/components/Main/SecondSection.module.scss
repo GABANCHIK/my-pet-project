@@ -1,0 +1,120 @@
+@use "../../constants/variables" as *;
+.secound-section-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.new-products {
+    &-container {
+        @include flex-align(center, center);
+        flex-direction: column;
+    }
+    &-text {
+        padding: 20px 0;
+        font-size: 2.9rem;
+        font-weight: 600;
+    }
+    &-info-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 25px;
+        align-items: center;
+        justify-items: center;
+        width: 80%;
+        padding: 20px;
+        color: $COLOR-TEXT;
+    }
+}
+
+.card {
+    width: 95%;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    img {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-bottom: 2px solid $COLOR-TEXT;
+    }
+    &-content {
+        padding: 1rem;
+        color: $COLOR-TEXT;
+        h3 {
+            margin-bottom: 8px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 45px;
+            line-height: 1.3;
+            font-weight: 500;
+            font-size: 1.2rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        a {
+            padding: 10px 15px;
+            border: 2px solid $COLOR-TEXT;
+            color: $COLOR-TEXT;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 500ms;
+            margin: 5px;
+            &:hover {
+                background-color: $COLOR-TEXT;
+                color: $COLOR-WHITE;
+            }
+        }
+    }
+}
+
+@media (max-width: 1454px) {
+    .new-products {
+        font-size: 1.5rem;
+        &-info-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .card {
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}
+@media (max-width: 760px) {
+    .new-products {
+        font-size: 1.5rem;
+        &-info-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &-text {
+            font-size: 2rem;
+        }
+    }
+    .card {
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}

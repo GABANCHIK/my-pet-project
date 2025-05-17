@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import styles from "./Modal.module.css";
+import styles from "./Modal.module.scss";
 import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
 import { mainActions } from "../../store/main-slice";

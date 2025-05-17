@@ -1,4 +1,4 @@
-import styles from "./CartForm.module.css";
+import styles from "./CartForm.module.scss";
 import useInput from "../../hooks/use-input";
 import { useDispatch, useSelector } from "react-redux";
 import { mainActions } from "../../store/main-slice";
@@ -65,13 +65,13 @@ const CartForm = () => {
     };
 
     const cityInputClasses = `${styles["form-control"]} ${
-        hasCityInputError ? styles.invalid : ""
+        hasCityInputError ? styles["form-invalid"] : ""
     }`;
     const addressInputClasses = `${styles["form-control"]} ${
-        hasAddressInputError ? styles.invalid : ""
+        hasAddressInputError ? styles["form-invalid"] : ""
     }`;
     const numberInputClasses = `${styles["form-control"]} ${
-        hasNumberInputError ? styles.invalid : ""
+        hasNumberInputError ? styles["form-invalid"] : ""
     }`;
 
     return (
@@ -87,7 +87,7 @@ const CartForm = () => {
                     type="text"
                 />
                 {hasCityInputError && (
-                    <p className={styles["error-text"]}>NEED TO INPUT CITY</p>
+                    <p className={styles["form-error-text"]}>NEED TO INPUT CITY</p>
                 )}
             </div>
             <div className={addressInputClasses}>
@@ -101,7 +101,7 @@ const CartForm = () => {
                     onBlur={inputLostFocusAddressHandler}
                 />
                 {hasAddressInputError && (
-                    <p className={styles["error-text"]}>
+                    <p className={styles["form-error-text"]}>
                         NEED TO INPUT ADDRESS
                     </p>
                 )}
@@ -117,7 +117,7 @@ const CartForm = () => {
                     onBlur={inputLostFocusNumberHandler}
                 />
                 {hasNumberInputError && (
-                    <p className={styles["error-text"]}>NEED TO INPUT NUMBER</p>
+                    <p className={styles["form-error-text"]}>NEED TO INPUT NUMBER</p>
                 )}
             </div>
             <div className={styles["form-actions"]}>

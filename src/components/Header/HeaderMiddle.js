@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import styles from "./HeaderMiddle.module.css";
+import styles from "./HeaderMiddle.module.scss";
 import { headerActions } from "../../store/header-slice";
 const HeaderMiddle = () => {
     const dispatchAction = useDispatch();

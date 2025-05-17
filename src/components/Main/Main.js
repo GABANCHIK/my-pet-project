@@ -1,6 +1,6 @@
 import FirstSection from "./FirstSection";
 import SecondSection from "./SecondSection";
-import styles from "./Main.module.css";
+import styles from "./Main.module.scss";
 import Footer from "../Footer/Footer";
 
 const Main = () => {

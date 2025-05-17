@@ -1,0 +1,61 @@
+@use "../../constants/variables" as *;
+.form {
+    padding-top: 10px;
+    margin-top: 20px;
+    border-top: 1px solid $COLOR-GRAY-LIGHT;
+    &-control {
+        @include flex-align(null, flex-start);
+        flex-direction: column;
+        label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 5px 0px;
+            align-self: flex-start;
+        }
+        input {
+            width: 30%;
+            font-size: 1rem;
+            height: 30px;
+            padding: 5px;
+            border: 2px solid $COLOR-TEXT;
+            &:focus-visible {
+                outline: none;
+                border-radius: 0;
+                box-shadow: none;
+                border-color: $COLOR-BACKGROUND;
+            }
+        }
+    }
+    &-invalid input {
+        background-color: rgb(226, 157, 157);
+        border-color: red;
+    }
+    &-error-text {
+        color: red;
+        font-size: 0.9rem;
+        margin-top: 4px;
+    }
+    &-actions {
+        @include flex-align(null, flex-end);
+        gap: 20px;
+    }
+}
+
+.cart {
+    &-close-btn {
+        @include reject-btn;
+        &:hover {
+            background-color: #d5d5d5;
+        }
+    }
+    &-send-btn {
+        @include accept-btn;
+        &:hover {
+            background-color: rgb(71, 70, 70);
+        }
+        &:disabled {
+            color: #202020;
+            background-color: #868585;
+        }
+    }
+}
