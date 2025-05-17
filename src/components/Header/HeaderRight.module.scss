@@ -3,21 +3,15 @@
     @include flex-align(center, center);
 }
 .nav-item {
+    border: 2px solid $COLOR-WHITE;
+    padding: 10px;
+    border-radius: 8px;
     position: relative;
     margin: 0px 25px;
     text-decoration: none;
     color: $COLOR-WHITE;
-    &::after {
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        height: 2px;
-        width: 100%;
-        background-color: transparent;
-        content: "";
-    }
-    &:hover::after {
-        background-color: #fff;
+    &:hover {
+        background-color: rgb(53, 53, 53);
     }
 }
 

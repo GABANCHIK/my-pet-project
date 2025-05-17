@@ -10,7 +10,7 @@ const HeaderRight = () => {
     const isRightSideBarOpen = useSelector(
         (state) => state.main.isRightSideBarOpen
     );
-    
+
     const cartVisibiltyToggle = () => {
         dispatchAction(mainActions.toggleCartVisibility());
         dispatchAction(cartActions.resetOrderStatus());
@@ -29,6 +29,12 @@ const HeaderRight = () => {
                 <span>CART</span>
                 <span className={styles.badge}>{itemsQuantity}</span>
             </button>
+            <a
+                href="#"
+                className={styles["nav-item"]}
+            >
+                SIGN IN
+            </a>
             {/* opened */}
             {!isRightSideBarOpen && (
                 <a
